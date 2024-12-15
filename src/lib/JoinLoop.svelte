@@ -3,10 +3,10 @@
    import { onMount, onDestroy } from "svelte";
 
    /** @type {{
-    * begin?: import('./loop.svelte.js').BeginCallback,
-    * update?: import('./loop.svelte.js').UpdateCallback,
-    * draw?: import('./loop.svelte.js').DrawCallback,
-    * end?: import('./loop.svelte.js').EndCallback
+    * begin?: import('./types').BeginCallback,
+    * update?: import('./types').UpdateCallback,
+    * draw?: import('./types').DrawCallback,
+    * end?: import('./types').EndCallback
     * }} */
    let { begin = undefined, update = undefined, draw = undefined, end = undefined } = $props();
 
