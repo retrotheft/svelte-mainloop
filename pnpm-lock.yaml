@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  mainloop.js:
-    specifier: ^1.0.4
-    version: 1.0.4
-
 devDependencies:
   '@sveltejs/package':
     specifier: ^2.3.7
@@ -157,10 +152,6 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
     dev: true
-
-  /mainloop.js@1.0.4:
-    resolution: {integrity: sha512-zAyzCCwJcSDv777sGZTnDaXQdZs8POeysoI5YcSJaFKRVTnFRUQFlnV2B1Wn8N5KRygMOyKCr6cOerAnItkY3A==}
-    dev: false
 
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}

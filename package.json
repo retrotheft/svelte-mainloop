@@ -19,12 +19,15 @@
    "files": [
       "dist"
    ],
-   "keywords": ["svelte", "mainloop", "game", "loop", "mainloop.js"],
+   "keywords": [
+      "svelte",
+      "mainloop",
+      "game",
+      "loop",
+      "mainloop.js"
+   ],
    "author": "Jim Bridger",
    "license": "MIT",
-   "dependencies": {
-      "mainloop.js": "^1.0.4"
-   },
    "peerDependencies": {
       "svelte": "^5.0.0"
    },

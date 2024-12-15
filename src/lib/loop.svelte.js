@@ -1,6 +1,6 @@
 /** @typedef {'begin' | 'draw' | 'update' | 'end'} StageString */
 
-import MainLoop from 'mainloop.js'
+import MainLoop from './mainloop.js'
 
 class Loop {
    /** @type {Object.<StageString, Function[]>} */
