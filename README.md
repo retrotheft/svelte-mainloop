@@ -21,7 +21,7 @@ First, install svelte-mainloop:
 npm install svelte-mainloop
 ```
 
-Then you can connect your app up to the loop using the **JoinLoop** component and passing it your update function:
+Then import the **JoinLoop** component, write your update function (this will get called each frame, basically) and pass update to JoinLoop:
 
 ```svelte
 <script>
@@ -32,7 +32,7 @@ Then you can connect your app up to the loop using the **JoinLoop** component an
    }
 </script>
 
-<JoinLoop {update}>
+<JoinLoop {update} />
 ```
 
 That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality.
@@ -54,7 +54,7 @@ For starters, MainLoop gives you 4 different stages of the loop to tap into, whi
 
 {timeElapsed} seconds passed.
 
-<JoinLoop {update}>
+<JoinLoop {update} />
 ```
 
 > IMPORTANT: MainLoop.js by default provides its delta value as the number of milliseconds, so at 60fps the `delta` is 16.67. Svelte-mainloop divides this by 1000 when passing it to callbacks, in order to express delta in seconds.
@@ -80,7 +80,7 @@ If you want to remove your component from the loop, perhaps because it is paused
 <button onclick={() => isPaused = !isPaused}>{ isPaused ? 'Play' : 'Pause'}<button>
 
 {#if !isPaused && timeElapsed < COMPLETION_TIME}
-   <JoinLoop {update}>
+   <JoinLoop {update} />
 {/if}
 ```
 
@@ -135,12 +135,18 @@ Or if you prefer, you can type the callback functions with jsdoc:
 
 ```svelte
 <script>
+   // Use this option if you're using vanilla js
    /** @type {import('svelte-mainloop').UpdateCallback} */
    function update(delta: number) {
       prevValue = value;
       value = (value + delta) % max;
    }
+</script>
+```
 
+```svelte
+<script lang="ts">
+   // use this option if you hate arrow functions
    // using implements - make sure to import the type
    import type { UpdateCallback} from 'svelte-mainloop'
    
@@ -149,6 +155,7 @@ Or if you prefer, you can type the callback functions with jsdoc:
       prevValue = value;
       value = (value + delta) % max;
    }
+</script>
 ```
 
 This might be useful if you prefer to use the `function` keyword. In all three cases, hovering over the `UpdateCallback` keyword will display intellisense.
