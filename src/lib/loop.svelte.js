@@ -167,7 +167,7 @@ class Loop {
     * rather, it is considered "running" after the application draws its first frame.
     * @returns {void}
     */
-   start() {
+   start = () => {
        MainLoop.start();
        requestAnimationFrame(() => (this.state.isRunning = true));
    }
@@ -177,7 +177,7 @@ class Loop {
     * Event handling and other background tasks should also be paused when the main loop is paused.
     * @returns {void}
     */
-   stop() {
+   stop = () => {
        this.state.isRunning = false;
        MainLoop.stop();
        this.state.lastTimestamp = this.state.timestamp;
