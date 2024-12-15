@@ -12,7 +12,6 @@
       </button>
       {#if loop.state.isVisible}
          <button onclick={loop.reset}>Reset</button>
-         <button onclick={() => console.log(loop.functions.update)}>Log Update ƒs</button>
       {/if}
    </span>
    {#if loop.state.isVisible}
