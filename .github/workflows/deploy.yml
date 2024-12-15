@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ['main'] # or 'master', depending on your default branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # or whatever version you're using
+
+      - name: Install Dependencies
+        working-directory: ./test-app
+        run: npm install
+
+      - name: Build
+        working-directory: ./test-app
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: test-app/dist # or whatever your build output directory is
+          branch: gh-pages

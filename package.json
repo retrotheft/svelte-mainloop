@@ -1,0 +1,36 @@
+{
+   "name": "svelte-mainloop",
+   "version": "1.0.0",
+   "description": "A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component.",
+   "type": "module",
+   "scripts": {
+      "build": "svelte-package",
+      "dev": "svelte-package --watch",
+      "prepublishOnly": "pnpm run build"
+   },
+   "main": "dist/index.js",
+   "exports": {
+      ".": {
+         "types": "./dist/index.d.ts",
+         "svelte": "./dist/index.js",
+         "default": "./dist/index.js"
+      }
+   },
+   "files": [
+      "dist"
+   ],
+   "keywords": ["svelte", "mainloop", "game", "loop", "mainloop.js"],
+   "author": "Jim Bridger",
+   "license": "MIT",
+   "dependencies": {
+      "mainloop.js": "^1.0.4"
+   },
+   "peerDependencies": {
+      "svelte": "^5.0.0"
+   },
+   "devDependencies": {
+      "@sveltejs/package": "^2.3.7",
+      "@types/mainloop.js": "^1.0.7",
+      "svelte": "^5.13.0"
+   }
+}
