@@ -1,14 +1,19 @@
 # Svelte-MainLoop
 
+[![npm version](https://badge.fury.io/js/svelte-mainloop.svg)](https://badge.fury.io/js/svelte-mainloop)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component. It also provides some debugging info and tools, exposes all of the standard mainloop.js functionality, is fully typed, and provides inline documentation through intellisense.
+
+
 
 * [MainLoop.js on github](https://github.com/IceCreamYou/MainLoop.js)
 * [MainLoop.js documentation](https://icecreamyou.github.io/MainLoop.js/docs/#!/api/MainLoop)
-* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test App code for examples of the different stages.
+* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test
 
 ## Requirements
 
-- Svelte 5.x (this library uses Svelte 5 runes and is not compatible with earlier versions)
+![Svelte](https://img.shields.io/badge/Svelte-5.x-FF3E00?logo=svelte)
 
 ## Getting Started
 
