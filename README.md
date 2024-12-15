@@ -7,7 +7,7 @@ A svelte wrapper for mainloop.js that handles function registration and cleanup,
 
 * [MainLoop.js on github](https://github.com/IceCreamYou/MainLoop.js)
 * [MainLoop.js documentation](https://icecreamyou.github.io/MainLoop.js/docs/#!/api/MainLoop)
-* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test
+* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test App code to see some examples of how to use.
 
 ## Requirements
 
@@ -90,8 +90,6 @@ There are three other stages you can also use: begin, draw, and end.
 
 It's highly recommended to read through the mainloop docs to understand what each stage is used for and what parameters they pass in to the callback.
 
----
-
 ## ViewLoop
 
 You can import the **ViewLoop** component and display it in your app in order to display some information about the mainloop.
@@ -116,8 +114,6 @@ In addition to providing start/stop and reset buttons, **ViewLoop** displays:
 - MainLoop's `panic` boolean
 
 **ViewLoop** also displays the number of functions that are registered with each stage of the loop. This can be useful to check if you have a memory leak and are not removing items from the loop when they're done.
-
----
 
 ## Typescript
 
