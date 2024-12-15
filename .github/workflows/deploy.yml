@@ -36,15 +36,20 @@ jobs:
         working-directory: ./test-app
         run: |
           npm install
-          npm install ../ # Install the local package
+          npm install ../
 
       - name: Build Test App
         working-directory: ./test-app
         run: npm run build
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: test-app/dist
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: test-app/dist
-          branch: gh-pages
+        uses: actions/deploy-pages@v4
