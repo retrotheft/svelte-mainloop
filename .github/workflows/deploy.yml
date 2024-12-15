@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['main'] # or 'master', depending on your default branch name
+    branches: ['main']
 
 jobs:
   build-and-deploy:
@@ -13,18 +13,29 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # or whatever version you're using
+          node-version: '18'
 
-      - name: Install Dependencies
-        working-directory: ./test-app
+      # Install dependencies for the main package first
+      - name: Install Main Package Dependencies
         run: npm install
 
-      - name: Build
+      # Build the main package
+      - name: Build Main Package
+        run: npm run build
+
+      # Now handle the test-app
+      - name: Install Test App Dependencies
+        working-directory: ./test-app
+        run: |
+          npm install
+          npm install ../ # Install the local package
+
+      - name: Build Test App
         working-directory: ./test-app
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: test-app/dist # or whatever your build output directory is
+          folder: test-app/dist
           branch: gh-pages
