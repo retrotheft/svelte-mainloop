@@ -4,6 +4,7 @@ A svelte wrapper for mainloop.js that handles function registration and cleanup,
 
 * [MainLoop.js on github](https://github.com/IceCreamYou/MainLoop.js)
 * [MainLoop.js documentation](https://icecreamyou.github.io/MainLoop.js/docs/#!/api/MainLoop)
+* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test App code for examples of the different stages.
 
 ## Getting Started
 
