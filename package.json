@@ -33,7 +33,6 @@
    },
    "devDependencies": {
       "@sveltejs/package": "^2.3.7",
-      "@types/mainloop.js": "^1.0.7",
       "svelte": "^5.13.0"
    }
 }

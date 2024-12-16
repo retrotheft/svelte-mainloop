@@ -8,9 +8,6 @@ devDependencies:
   '@sveltejs/package':
     specifier: ^2.3.7
     version: 2.3.7(svelte@5.13.0)(typescript@5.7.2)
-  '@types/mainloop.js':
-    specifier: ^1.0.7
-    version: 1.0.7
   svelte:
     specifier: ^5.13.0
     version: 5.13.0
@@ -74,10 +71,6 @@ packages:
 
   /@types/estree@1.0.6:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
-    dev: true
-
-  /@types/mainloop.js@1.0.7:
-    resolution: {integrity: sha512-ZszjhlaXBmmwjnsRzUmc89c+hY61Cd7R7PDx34yviomT7j96hpQxRsKpO85THHkLI0p8049PwIzbcPGdbCL/Mw==}
     dev: true
 
   /acorn-typescript@1.4.13(acorn@8.14.0):
