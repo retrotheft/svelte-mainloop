@@ -37,7 +37,7 @@ Then import the **JoinLoop** component, write your update function (this will ge
 
 That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality.
 
-For starters, MainLoop gives you 4 different stages of the loop to tap into, which are used for various purposes. Each stage uses a callback that is slightly different, with different parameters. The most common one, and the one used above, is **update**.
+For starters, MainLoop gives you 4 different stages of the loop to tap into, which are used for various purposes. Each stage uses a callback that is slightly different, with different parameters. The most common one, and the one used above, is **update**. (the others are **begin**, **draw** and **end**.)
 
 **Update** accepts **delta**, which is the time since the last update. You can use this to keep track of the time your app has been running, like so:
 
