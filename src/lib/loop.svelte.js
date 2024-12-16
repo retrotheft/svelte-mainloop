@@ -19,14 +19,13 @@ class Loop {
    })
    /** @typedef {import('./types').LoopState} LoopState */
    state = $state({
-      isVisible: true,
+      isRunning: false,
       timestamp: 0,
       lastTimestamp: 0,
       lastAbsence: 0,
       checkAway: false,
       frame: 0,
       tick: 0,
-      isRunning: false,
       fps: 0,
       lastInterp: 0,
       lastDelta: 0,
@@ -178,7 +177,7 @@ class Loop {
     * @returns {void}
     */
    stop = () => {
-       this.state.isRunning = false;
+      this.state.isRunning = false;
        MainLoop.stop();
        this.state.lastTimestamp = this.state.timestamp;
        this.state.checkAway = true;

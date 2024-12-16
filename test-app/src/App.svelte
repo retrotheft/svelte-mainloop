@@ -1,5 +1,5 @@
 <script lang="ts">
-   import loop, { ViewLoop } from "svelte-mainloop";
+   import { ViewLoop } from "svelte-mainloop";
    import About from "./lib/About.svelte";
    import Job from "./lib/Job.svelte";
    import Roll from "./lib/Roll.svelte";
@@ -12,9 +12,9 @@
       { name: "Job", component: Job },
       { name: "Roll", component: Roll },
       { name: "Detect Input", component: DetectInput },
-   ]
-   
-   let selectedComponent = $state(components[0])
+   ];
+
+   let selectedComponent = $state(components[0]);
 </script>
 
 <header>
@@ -28,7 +28,7 @@
 <aside>
    <ul>
       {#each components as component}
-         <li><button onclick={() => selectedComponent = component}>{component.name}</button></li>
+         <li><button onclick={() => (selectedComponent = component)}>{component.name}</button></li>
       {/each}
    </ul>
 </aside>
@@ -88,5 +88,20 @@
       grid-area: footer;
       border-top: 1px solid var(--border-color);
       margin: 0;
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: white;
+      width: 100cqi;
+      display: flex;
+      justify-content: space-between;
+
+      :global(section > span) {
+         display: flex;
+         align-items: center;
+      }
+
+      :global(span > span) {
+         margin: 0 10px;
+      }
    }
 </style>

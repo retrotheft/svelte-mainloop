@@ -1,5 +1,7 @@
 <script lang="ts">
    import loop from "./loop.svelte.js";
+
+   let isVisible = $state(true);
 </script>
 
 <section>
@@ -7,14 +9,14 @@
       <button onclick={loop.state.isRunning ? loop.stop : loop.start}>
          {loop.state.isRunning ? "Stop" : "Start"}
       </button>
-      <button onclick={() => (loop.state.isVisible = !loop.state.isVisible)}>
-         {loop.state.isVisible ? "Hide Debug Info" : "Show Debug Info"}
+      <button onclick={() => (isVisible = !isVisible)}>
+         {isVisible ? "Hide Debug Info" : "Show Debug Info"}
       </button>
-      {#if loop.state.isVisible}
+      {#if isVisible}
          <button onclick={loop.reset}>Reset</button>
       {/if}
    </span>
-   {#if loop.state.isVisible}
+   {#if isVisible}
       <span>
          <span>{loop.state.isRunning ? "Running" : "Paused"}</span>
          <span>FPS: {loop.state.fps.toFixed(0)}</span>
@@ -37,20 +39,6 @@
 
 <style>
    section {
-      font-family: monospace;
-      font-size: 0.7rem;
-      color: white;
-      width: 100cqi;
-      display: flex;
-      justify-content: space-between;
-   }
-
-   section > span {
-      display: flex;
-      align-items: center;
-   }
-
-   span > span {
-      margin: 0 10px;
+      display: contents;
    }
 </style>

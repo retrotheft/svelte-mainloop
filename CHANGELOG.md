@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.1] - 2024-12-16
+
+- moved isVisible boolean back to `ViewLoop` component from loop state
+- changed `ViewLoop` section style to `display: contents` for easier styling
+
 ## [1.1.0] - 2024-12-16
 - modernised and internalised `mainloop.js`, removed as dependency
   - this was required in order to get the library to work on the Svelte REPL
