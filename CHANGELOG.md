@@ -2,6 +2,7 @@
 
 ## [1.1.1] - 2024-12-16
 
+- attempt #1 to fix github npm badge caching
 - moved isVisible boolean back to `ViewLoop` component from loop state
 - changed `ViewLoop` section style to `display: contents` for easier styling
 
