@@ -1,6 +1,6 @@
 # Svelte-MainLoop
 
-[![npm version](https://badge.fury.io/js/svelte-mainloop.svg?kill_cache=1)](https://badge.fury.io/js/svelte-mainloop)
+[![npm version](https://badge.fury.io/js/svelte-mainloop.svg)](https://badge.fury.io/js/svelte-mainloop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component. It also provides some debugging info and tools, exposes all of the standard mainloop.js functionality, is fully typed, and provides inline documentation through intellisense.
