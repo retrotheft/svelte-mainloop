@@ -37,15 +37,17 @@ class Loop {
       MainLoop.setUpdate((delta) => this.#run("update", [delta / 1000]))
       MainLoop.setEnd((fps, panic) => this.#run("end", [fps, panic]))
 
-      this.register("begin", this.begin)
-      this.register("draw", this.draw)
-      this.register("update", this.update)
-      this.register("end", this.end)
+      this.register("begin", this.#begin)
+      this.register("draw", this.#draw)
+      this.register("update", this.#update)
+      this.register("end", this.#end)
 
-      document.addEventListener("visibilitychange", () => {
-         if (document.hidden) return this.stop()
-         return this.start() // needs to check for manual pause first
-      })
+      if (typeof document !== 'undefined') {
+         document.addEventListener("visibilitychange", () => {
+            if (document.hidden) return this.stop()
+            return this.start() // needs to check for manual pause first
+         })
+      }
    }
 
    /**
@@ -91,7 +93,7 @@ class Loop {
 
 
    /** @typedef {import('./types').BeginCallback} BeginCallback */
-   begin = (timestamp, delta) => {
+   #begin = (timestamp, delta) => {
       this.state.timestamp = timestamp
       if (this.state.checkAway) {
          this.state.lastAbsence = timestamp - this.state.lastTimestamp
@@ -100,19 +102,19 @@ class Loop {
    };
 
    /** @typedef {import('./types').DrawCallback} DrawCallback */
-   draw = (interp) => {
+   #draw = (interp) => {
       this.state.lastInterp = interp
       this.state.frame++
    };
 
    /** @typedef {import('./types').UpdateCallback} UpdateCallback */
-   update = (delta) => {
+   #update = (delta) => {
       this.state.tick++
       this.state.lastDelta = delta * 1000
    };
 
    /** @typedef {import('./types').EndCallback} EndCallback */
-   end = (fps, panic) => {
+   #end = (fps, panic) => {
       this.state.fps = fps
       this.state.panic = panic
    };
@@ -203,7 +205,6 @@ if (typeof window !== 'undefined') {
    console.warn(
       'svelte-mainloop was imported in a non-browser environment (probably during SSR). ' +
       'A no-op version will be used. The loop will start when the page hydrates in the browser.')
-   console.warn('If you need to run this in Node.js, consider using the original mainloop.js library. https://github.com/IceCreamYou/MainLoop.js')
    loop = {
       register: () => { },
       unregister: () => { },
@@ -225,7 +226,22 @@ if (typeof window !== 'undefined') {
          draw: [],
          update: [],
          end: []
-      }
+      },
+      lengths: {
+         begin: 0,
+         draw: 0,
+         update: 0,
+         end: 0
+      },
+      getLastAbsence: () => 0,
+      getFPS: () => 0,
+      getMaxAllowedFPS: () => 0,
+      getSimulationTimestep: () => 0,
+      setMaxAllowedFPS: () => { },
+      setSimulationTimestep: () => { },
+      start: () => { },
+      stop: () => { },
+      reset: () => { },
    }
 }
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-   import { JoinLoop } from 'svelte-mainloop'
+   import { JoinLoop, ViewLoop } from 'svelte-mainloop'
    
    let secondsElapsed = $state(0)
 
@@ -11,3 +11,5 @@
  <JoinLoop {update} />
 
 <p>Seconds elapsed: {secondsElapsed.toFixed(1)}</p>
+
+<ViewLoop />

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3] - 2024-12-21
+
+### Fixed
+  - added missing functions and `lengths` object to ssr dummy loop
+  - made internal begin, update, draw and end functions private
+  - added `document` check in `loop.svelte.js`
+
 ## [1.1.2] - 2024-12-21
 
 ### Fixed
