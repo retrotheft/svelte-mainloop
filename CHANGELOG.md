@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.2]
+## [1.1.2] - 2024-12-21
 
 ### Fixed
   - now checks for `window` and provides a no-op loop for ssr environments. Should work in SvelteKit now.
