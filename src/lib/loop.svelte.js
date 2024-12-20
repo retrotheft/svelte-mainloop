@@ -89,7 +89,7 @@ class Loop {
     */
    unregister = (stage, fn) => this.#removeFunction(stage, fn);
 
-   
+
    /** @typedef {import('./types').BeginCallback} BeginCallback */
    begin = (timestamp, delta) => {
       this.state.timestamp = timestamp
@@ -167,8 +167,8 @@ class Loop {
     * @returns {void}
     */
    start = () => {
-       MainLoop.start();
-       requestAnimationFrame(() => (this.state.isRunning = true));
+      MainLoop.start()
+      requestAnimationFrame(() => (this.state.isRunning = true))
    }
 
    /**
@@ -177,10 +177,10 @@ class Loop {
     * @returns {void}
     */
    stop = () => {
-      this.state.isRunning = false;
-       MainLoop.stop();
-       this.state.lastTimestamp = this.state.timestamp;
-       this.state.checkAway = true;
+      this.state.isRunning = false
+      MainLoop.stop()
+      this.state.lastTimestamp = this.state.timestamp
+      this.state.checkAway = true
    }
 
    /**
@@ -194,9 +194,40 @@ class Loop {
    };
 }
 
-const loop = new Loop()
-
-loop.start()
+let loop
+if (typeof window !== 'undefined') {
+   loop = new Loop()
+   loop.start()
+} else {
+   // Provide a no-op version for SSR
+   console.warn(
+      'svelte-mainloop was imported in a non-browser environment (probably during SSR). ' +
+      'A no-op version will be used. The loop will start when the page hydrates in the browser.')
+   console.warn('If you need to run this in Node.js, consider using the original mainloop.js library. https://github.com/IceCreamYou/MainLoop.js')
+   loop = {
+      register: () => { },
+      unregister: () => { },
+      state: {
+         isRunning: false,
+         timestamp: 0,
+         lastTimestamp: 0,
+         lastAbsence: 0,
+         checkAway: false,
+         frame: 0,
+         tick: 0,
+         fps: 0,
+         lastInterp: 0,
+         lastDelta: 0,
+         panic: false
+      },
+      functions: {
+         begin: [],
+         draw: [],
+         update: [],
+         end: []
+      }
+   }
+}
 
 export default loop
 

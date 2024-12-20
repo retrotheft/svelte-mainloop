@@ -11,7 +11,9 @@ A svelte wrapper for mainloop.js that handles function registration and cleanup,
 
 ## Requirements
 
-[![Svelte](https://img.shields.io/badge/Svelte-5.x-FF3E00?logo=svelte)](https://www.npmjs.com/package/svelte?activeTab=versions)
+- [![Svelte](https://img.shields.io/badge/Svelte-5.x-FF3E00?logo=svelte)](https://www.npmjs.com/package/svelte?activeTab=versions)
+- Browser environment with `requestAnimationFrame` support. If you're running node, try using [mainloop.js]('https://github.com/IceCreamYou/MainLoop.js') directly.
+- If you're running SvelteKit, `svelte-mainloop` will provide a dummy loop for ssr, and should run correctly on the client side.
 
 ## Getting Started
 

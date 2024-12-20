@@ -5,6 +5,7 @@
    import Roll from "./lib/Roll.svelte";
    import PolarSystem from "./lib/PolarSystem.svelte";
    import DetectInput from "./lib/DetectInput.svelte";
+   import AutoType from "./lib/AutoType.svelte";
 
    const components = [
       { name: "About", component: About },
@@ -12,6 +13,7 @@
       { name: "Job", component: Job },
       { name: "Roll", component: Roll },
       { name: "Detect Input", component: DetectInput },
+      { name: "Auto Type", component: AutoType },
    ];
 
    let selectedComponent = $state(components[0]);

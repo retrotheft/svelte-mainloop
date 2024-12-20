@@ -9,7 +9,6 @@
 
 /** 
  * @typedef {Object} LoopState
- * @property {boolean} isVisible
  * @property {number} timestamp
  * @property {number} lastTimestamp 
  * @property {number} lastAbsence

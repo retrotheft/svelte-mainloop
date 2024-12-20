@@ -1,19 +1,39 @@
 # Changelog
 
+## [1.1.2]
+
+### Fixed
+  - now checks for `window` and provides a no-op loop for ssr environments. Should work in SvelteKit now.
+
+### Added
+  - added `AutoType.svelte` to **Test-App**
+  - added `test-ssr` app for SvelteKit testing
+
+### Dependencies
+  - removed `@types/mainloop.js` from devDependencies
+
 ## [1.1.1] - 2024-12-16
 
-- attempt #1 to fix github npm badge caching
-- moved isVisible boolean back to `ViewLoop` component from loop state
-- changed `ViewLoop` section style to `display: contents` for easier styling
+### Changed
+  - attempt #1 to fix github npm badge caching
+  - moved isVisible boolean back to `ViewLoop` component from loop state
+  - changed `ViewLoop` section style to `display: contents` for easier styling
 
 ## [1.1.0] - 2024-12-16
-- modernised and internalised `mainloop.js`, removed as dependency
+
+### Changed
+- fixed incorrect jsdoc type imports in `JoinLoop.svelte`
+
+### Added
+- modernised and internalised `mainloop.js`
   - this was required in order to get the library to work on the Svelte REPL
   - switched to es module export, removed old module exports
   - updated variable declarations
   - kept all original comments intact, added some jsdoc types
   - added a note about noop vs conditional performance, no change functionally
-- fixed incorrect jsdoc type imports in `JoinLoop.svelte`
+
+### Dependencies
+- removed `mainloop.js`
 
 ## [1.0.1] - 2024-12-15
 
