@@ -39,7 +39,7 @@ Then import the **JoinLoop** component, write your update function (this will ge
 
 [Try it on the Svelte Playground](https://svelte.dev/playground/74147e1570fe40be9f2314d90a0c2150?version=5.14.0)
 
-That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality.
+That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality. 
 
 For starters, MainLoop gives you 4 different stages of the loop to tap into, which are used for various purposes. Each stage uses a callback that is slightly different, with different parameters. The most common one, and the one used above, is **update**. (the others are **begin**, **draw** and **end**.)
 
