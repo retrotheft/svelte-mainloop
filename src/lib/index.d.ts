@@ -1,4 +1,5 @@
 import type { SvelteComponent } from 'svelte'
+import { Loop } from './loop.svelte'
 
 declare module 'svelte-mainloop' {
    export class JoinLoop extends SvelteComponent { }

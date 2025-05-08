@@ -2,7 +2,7 @@
 
 import MainLoop from './mainloop.js'
 
-class Loop {
+export class Loop {
    /** @type {Object.<StageString, Function[]>} */
    functions = $state({
       begin: [],
