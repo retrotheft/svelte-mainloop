@@ -1,0 +1,9 @@
+<script>
+   import { draw2d } from 'svelte-mainloop/canvas'
+
+   function paint(context) {
+      // write your drawing logic here
+   }
+</script>
+
+<canvas {@attach draw2d(paint)}></canvas>

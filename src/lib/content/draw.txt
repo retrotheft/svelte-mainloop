@@ -1,0 +1,11 @@
+<script>
+   import { JoinLoop } from 'svelte-mainloop'
+
+   let secondsElapsed = $state(0)
+
+   function draw(delta: number) {
+      seconds += delta
+   }
+</script>
+
+<JoinLoop {draw} />

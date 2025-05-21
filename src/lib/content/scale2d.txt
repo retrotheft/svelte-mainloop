@@ -1,0 +1,17 @@
+<script>
+   import { scale2d } from 'svelte-mainloop/canvas'
+
+   function init(context) {
+      // runs when the canvas mounts
+      // reruns if canvas is resized
+      return paint // return your draw fn
+   }
+
+   function paint(context) {
+      // write your drawing logic here
+   }
+</script>
+
+<canvas {@attach scale2d(init)}></canvas>
+<!-- scale2d reacts to window inner dimensions and resizes canvas
+     just style the canvas using CSS and scale2d will do the rest -->

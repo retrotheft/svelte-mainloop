@@ -1,0 +1,11 @@
+<script>
+   import { JoinLoop } from 'svelte-mainloop'
+
+   let seconds = $state(0)
+
+   function update(delta) {
+      seconds += delta
+   }
+</script>
+
+<JoinLoop {update} />

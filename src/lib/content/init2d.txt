@@ -1,0 +1,14 @@
+<script>
+   import { init2d } from 'svelte-mainloop/canvas'
+
+   function init(context) {
+      // runs when the canvas mounts
+      return paint // return your draw fn
+   }
+
+   function paint(context) {
+      // write your drawing logic here
+   }
+</script>
+
+<canvas {@attach init2d(init)}></canvas>
