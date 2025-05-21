@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0] - 2025-05-22
+
+### Added
+   - added Attachments as introduced in Svelte 5.29
+
+### Changed
+   - rebuilt project as a SvelteKit library (was previously manually set up with svelte-package)
+   - exported Loop class
+   - cleaned up JSDoc and switched to typescript
+
 ## [1.1.3] - 2024-12-21
 
 ### Fixed

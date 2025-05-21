@@ -3,11 +3,14 @@
 [![npm version](https://badge.fury.io/js/svelte-mainloop.svg)](https://badge.fury.io/js/svelte-mainloop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**1.2.0 update**: introduces Attachments for setting up HTML Canvas. Hook up your draw function, run an init function and even keep the canvas scaled to its container, all with {@attach ... } call.
+
+---
+
 A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component. It also provides some debugging info and tools, exposes all of the standard mainloop.js functionality, is fully typed, and provides inline documentation through intellisense.
 
 * [MainLoop.js on github](https://github.com/IceCreamYou/MainLoop.js)
-* [MainLoop.js documentation](https://icecreamyou.github.io/MainLoop.js/docs/#!/api/MainLoop)
-* [Test App](https://retrotheft.github.io/svelte-mainloop/) - reference alongside the Test App code to see some examples of how to use.
+* [MainLoop.js documentation](https://icecreamyou.github.io/MainLoop.js/docs/#!/api/MainLoop).
 
 ## Requirements
 
@@ -39,9 +42,9 @@ Then import the **JoinLoop** component, write your update function (this will ge
 
 [Try it on the Svelte Playground](https://svelte.dev/playground/74147e1570fe40be9f2314d90a0c2150?version=5.14.0)
 
-That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality. 
+That's literally all you need to do to get moving, but svelte-mainloop has a lot more functionality.
 
-For starters, MainLoop gives you 4 different stages of the loop to tap into, which are used for various purposes. Each stage uses a callback that is slightly different, with different parameters. The most common one, and the one used above, is **update**. (the others are **begin**, **draw** and **end**.)
+For starters, MainLoop gives you 4 different stages of the loop to tap into, which are used for various purposes. Each stage uses a callback that is slightly different, with different arguments. The most common one, and the one used above, is **update**. (the others are **begin**, **draw** and **end**.)
 
 **Update** accepts **delta**, which is the time since the last update. You can use this to keep track of the time your app has been running, like so:
 
@@ -92,7 +95,7 @@ If you want to remove your component from the loop, perhaps because it is paused
 
 There are three other stages you can also use: begin, draw, and end.
 
-It's highly recommended to read through the mainloop docs to understand what each stage is used for and what parameters they pass in to the callback.
+It's highly recommended to read through the mainloop docs to understand what each stage is used for and what arguments they pass to the callback.
 
 ## ViewLoop
 
@@ -153,7 +156,7 @@ Or if you prefer, you can type the callback functions with jsdoc:
    // use this option if you hate arrow functions
    // using implements - make sure to import the type
    import type { UpdateCallback} from 'svelte-mainloop'
-   
+
    /** @implements {UpdateCallback} */
    function update(delta: number) {
       prevValue = value;

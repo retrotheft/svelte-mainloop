@@ -1,38 +1,76 @@
 {
-   "name": "svelte-mainloop",
-   "version": "1.1.3",
-   "description": "A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component.",
-   "type": "module",
-   "scripts": {
-      "build": "svelte-package",
-      "dev": "svelte-package --watch",
-      "prepublishOnly": "pnpm run build"
-   },
-   "main": "dist/index.js",
-   "exports": {
-      ".": {
-         "types": "./dist/index.d.ts",
-         "svelte": "./dist/index.js",
-         "default": "./dist/index.js"
-      }
-   },
-   "files": [
-      "dist"
-   ],
-   "keywords": [
-      "svelte",
-      "mainloop",
-      "game",
-      "loop",
-      "mainloop.js"
-   ],
-   "author": "Jim Bridger",
-   "license": "MIT",
-   "peerDependencies": {
-      "svelte": "^5.0.0"
-   },
-   "devDependencies": {
-      "@sveltejs/package": "^2.3.7",
-      "svelte": "^5.13.0"
-   }
+	"name": "svelte-mainloop",
+	"version": "1.2.0",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run prepack",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./canvas": {
+			"types": "./dist/canvas/index.d.ts",
+			"svelte": "./dist/canvas/index.js"
+		},
+		"./canvas/2d": {
+			"types": "./dist/canvas/2d/index.d.ts",
+			"svelte": "./dist/canvas/2d/index.js"
+		},
+		"./canvas/webgl": {
+			"types": "./dist/canvas/webgl/index.d.ts",
+			"svelte": "./dist/canvas/webgl/index.js"
+		},
+		"./canvas/webgl2": {
+			"types": "./dist/canvas/webgl2/index.d.ts",
+			"svelte": "./dist/canvas/webgl2/index.js"
+		},
+		"./canvas/bitmap": {
+			"types": "./dist/canvas/bitmap/index.d.ts",
+			"svelte": "./dist/canvas/bitmap/index.js"
+		}
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"publint": "^0.3.2",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"vite": "^6.2.6"
+	},
+	"keywords": [
+		"svelte"
+	],
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
+	"dependencies": {
+		"highlight.js": "^11.11.1",
+		"highlightjs-svelte": "^1.0.6"
+	}
 }
