@@ -5,6 +5,10 @@
 
 **1.2.0 update**: introduces Attachments for setting up HTML Canvas. Hook up your draw function, run an init function and even keep the canvas scaled to its container, all with {@attach ... } call.
 
+Refer to the below Svelte Playground for instructions on how to use.
+
+[Svelte Playground](https://svelte.dev/playground/26bdfa021212402dab48ca10230d7ce6?version=5.32.1)
+
 ---
 
 A svelte wrapper for mainloop.js that handles function registration and cleanup, and lets you join and leave the loop with a single component. It also provides some debugging info and tools, exposes all of the standard mainloop.js functionality, is fully typed, and provides inline documentation through intellisense.
