@@ -5,9 +5,10 @@
 
 **1.2.0 update**: introduces Attachments for setting up HTML Canvas. Hook up your draw function, run an init function and even keep the canvas scaled to its container, all with {@attach ... } call.
 
-Refer to the below Svelte Playground for instructions on how to use.
+Refer to the video and/or Svelte Playground for instructions on how to use.
 
-[Svelte Playground](https://svelte.dev/playground/26bdfa021212402dab48ca10230d7ce6?version=5.32.1)
+- [Svelte Playground](https://svelte.dev/playground/26bdfa021212402dab48ca10230d7ce6?version=5.32.1)
+- [How to Use Video](https://www.youtube.com/watch?v=HKU3tb6L-MQ)
 
 ---
 
