@@ -1,6 +1,6 @@
 {
 	"name": "svelte-mainloop",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -25,10 +25,6 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
-		},
-		"./canvas": {
-			"types": "./dist/canvas/index.d.ts",
-			"svelte": "./dist/canvas/index.js"
 		},
 		"./canvas/2d": {
 			"types": "./dist/canvas/2d/index.d.ts",

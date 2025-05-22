@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1] - 2025-05-22
+
+### Fixed
+   - fixed context-specific function type declarations
+
+### Removed
+   - removed unused canvas/index.ts file and exports
+
 ## [1.2.0] - 2025-05-22
 
 ### Added

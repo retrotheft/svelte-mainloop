@@ -5,6 +5,4 @@ export type { BeginCallback, UpdateCallback, DrawCallback, EndCallback } from ".
 
 export { JoinLoop, ViewLoop };
 
-export * from './canvas/index.js'
-
 export default loop;

@@ -1,6 +1,6 @@
 <script lang="ts">
    import { JoinLoop } from '$lib/index.js'
-   import { scale } from '$lib/canvas/2d/index.js'
+   import { scale, draw } from '$lib/canvas/2d/index.js'
    import updateCode from "$lib/content/update.txt?raw"
    import init2dCode from "$lib/content/init2d.txt?raw"
    import scale2dCode from "$lib/content/scale2d.txt?raw"
