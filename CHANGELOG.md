@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.2] - 2025-05-23
+
+### Fixed
+   - exported `Loop` class from index.js
+
 ## [1.2.1] - 2025-05-22
 
 ### Fixed
